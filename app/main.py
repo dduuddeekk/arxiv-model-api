@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routers import tfidf, bm25
+from app.routers import tfidf, bm25, faiss
 
 app = FastAPI()
 
@@ -14,3 +14,4 @@ app.add_middleware(
 
 app.include_router(tfidf.router)
 app.include_router(bm25.router)
+app.include_router(faiss.router)
